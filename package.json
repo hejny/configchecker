@@ -1,6 +1,6 @@
 {
   "name": "configchecker",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Awesome checker of config - fully support typescript, fluent API,...",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -23,8 +23,7 @@
   },
   "author": "Pavol Hejný",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "onchange": "^3.3.0",
