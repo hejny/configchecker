@@ -23,7 +23,7 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         return new ConfigValue(this.value!, this.profile, false);
     }
 
-    public default(value: NonNullable<T>): ConfigValue<T> {
+    public default(value: NonNullable<T>): ConfigValue<NonNullable<T>> {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         return new ConfigValue(this.value || value, this.profile, false);
     }
