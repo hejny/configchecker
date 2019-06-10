@@ -1,0 +1,24 @@
+{
+  "name": "configchecker",
+  "version": "0.1.0",
+  "description": "Awesome checker of config - fully support typescript, fluent API,...",
+  "scripts": {
+    "start": "npm run test-watch",
+    "prettier": "prettier --config .prettierrc --write \"{src,test,.vscode}/**/*.{ts,json}\"",
+    "prettier-watch": "onchange --initial \"**/*\" -- npm run prettier",
+    "server-test": "jest --runInBand --detectOpenHandles --forceExit --setupFiles dotenv/config",
+    "server-test-watch": "npm run server-test --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:hejny/configchecker.git"
+  },
+  "author": "Pavol Hejný",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "onchange": "^3.3.0",
+    "prettier": "github:prettier/prettier"
+  }
+}
