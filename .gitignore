@@ -1,3 +1,6 @@
+/lib
+/coverage
+
 .idea
 
 .vscode/*
@@ -7,3 +10,4 @@ node_modules
 
 
 .~lock*
+
