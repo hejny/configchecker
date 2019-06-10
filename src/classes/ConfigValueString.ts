@@ -1,7 +1,7 @@
 import { ConfigValue } from './ConfigValue';
 
 export class ConfigValueString extends ConfigValue<string | undefined> {
-    number(): ConfigValue<number | undefined> {
+    public number(): ConfigValue<number | undefined> {
         return this.custom('number', (stringValue) => {
             const numericValue = Number.parseFloat(stringValue);
 
@@ -13,18 +13,22 @@ export class ConfigValueString extends ConfigValue<string | undefined> {
         });
     }
 
-    boolean(): ConfigValue<boolean | undefined> {
+    public boolean(): ConfigValue<boolean | undefined> {
         return this.custom('boolean', (stringValue) => {
             stringValue = stringValue.toUpperCase();
 
-            if (['TRUE', '1', 'YES'].includes(stringValue)) return true;
-            if (['FALSE', '0', 'NO'].includes(stringValue)) return false;
+            if (['TRUE', '1', 'YES'].includes(stringValue)) {
+                return true;
+            }
+            if (['FALSE', '0', 'NO'].includes(stringValue)) {
+                return false;
+            }
 
             throw new Error(`Value is not boolean like.`);
         });
     }
 
-    json(): ConfigValue<any | undefined> {
+    public json(): ConfigValue<any | undefined> {
         return this.custom('json', (stringValue) => {
             try {
                 return JSON.parse(stringValue);
@@ -34,13 +38,13 @@ export class ConfigValueString extends ConfigValue<string | undefined> {
         });
     }
 
-    list(): ConfigValue<string[] | undefined> {
+    public list(): ConfigValue<string[] | undefined> {
         return this.custom('list', (stringValue) => {
             return stringValue.split(',').map((value) => value.trim());
         });
     }
 
-    date(): ConfigValue<Date | undefined> {
+    public date(): ConfigValue<Date | undefined> {
         return this.custom('date', (stringValue) => {
             const dateValue = new Date(stringValue);
 
@@ -52,7 +56,7 @@ export class ConfigValueString extends ConfigValue<string | undefined> {
         });
     }
 
-    url(): ConfigValue<URL | undefined> {
+    public url(): ConfigValue<URL | undefined> {
         return this.custom('url', (stringValue) => {
             try {
                 return new URL(stringValue);
@@ -62,5 +66,5 @@ export class ConfigValueString extends ConfigValue<string | undefined> {
         });
     }
 
-    //TODO: make regexp
+    // TODO: make regexp
 }

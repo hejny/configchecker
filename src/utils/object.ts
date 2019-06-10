@@ -21,10 +21,12 @@ export function emptyKeysAsUndefined<T>(mixedObject: { [key: string]: T }): { [k
     return purgedObject;
 }
 
-//TODO: maybe this should be typeguard
+// TODO: maybe this should be typeguard
 export function isNotEmpty<T>(mixedObject: { [key: string]: T | undefined }): boolean {
     for (const mixedKey of Object.keys(mixedObject)) {
-        if (mixedObject[mixedKey]) return true;
+        if (mixedObject[mixedKey]) {
+            return true;
+        }
     }
 
     return false;

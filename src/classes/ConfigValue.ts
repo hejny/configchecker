@@ -1,6 +1,6 @@
 import { IConfigValueProfile } from '../interfaces/IConfigValueProfile';
 
-//TODO: nice generic types
+// TODO: nice generic types
 export class ConfigValue<T> {
     constructor(public value: T, protected profile: IConfigValueProfile, private canBeUndefined = true) {}
 
@@ -15,14 +15,7 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         `.trim();
     }
 
-    private checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault() {
-        if (!this.canBeUndefined) {
-            //TODO: Better option would be to check it in typescript not the runtime
-            throw Error(`Required and default can be used only once ${this.about}`);
-        }
-    }
-
-    required(): ConfigValue<NonNullable<T>> {
+    public required(): ConfigValue<NonNullable<T>> {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         if (typeof this.value === 'undefined') {
             throw Error(`In config should be defined ${this.profile.key}. \n ${this.about}`);
@@ -30,12 +23,12 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         return new ConfigValue(this.value!, this.profile, false);
     }
 
-    default(value: NonNullable<T>): ConfigValue<T> {
+    public default(value: NonNullable<T>): ConfigValue<T> {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         return new ConfigValue(this.value || value, this.profile, false);
     }
 
-    custom<TC>(conversionType: string, convert: (value: NonNullable<T>) => TC): ConfigValue<TC | undefined> {
+    public custom<TC>(conversionType: string, convert: (value: NonNullable<T>) => TC): ConfigValue<TC | undefined> {
         if (typeof this.value === 'undefined') {
             return new ConfigValue(undefined, this.profile);
         }
@@ -49,7 +42,17 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         }
     }
 
-    asType<T>(): ConfigValue<T> {
+    /* tslint:disable */
+    // TODO: Strange ts-lint warning Shadowed name: 'T'
+    public asType<T>(): ConfigValue<T> {
         return new ConfigValue((this.value as unknown) as T, this.profile);
+    }
+    /* tslint:enable */
+
+    private checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault() {
+        if (!this.canBeUndefined) {
+            // TODO: Better option would be to check it in typescript not the runtime
+            throw Error(`Required and default can be used only once ${this.about}`);
+        }
     }
 }
