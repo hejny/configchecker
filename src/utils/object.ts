@@ -9,12 +9,11 @@ export function decapitalize<T>(mixedObject: { [key: string]: T }): { [key: stri
     return decapitalizedObject;
 }
 
-
 export function emptyKeysAsUndefined<T>(mixedObject: { [key: string]: T }): { [key: string]: T } {
     const purgedObject: { [key: string]: T } = {};
 
     for (const mixedKey of Object.keys(mixedObject)) {
-        if(mixedObject[mixedKey]){
+        if (mixedObject[mixedKey]) {
             purgedObject[mixedKey] = mixedObject[mixedKey];
         }
     }
@@ -23,10 +22,9 @@ export function emptyKeysAsUndefined<T>(mixedObject: { [key: string]: T }): { [k
 }
 
 //TODO: maybe this should be typeguard
-export function isNotEmpty<T>(mixedObject: { [key: string]: T|undefined }): boolean {
-
+export function isNotEmpty<T>(mixedObject: { [key: string]: T | undefined }): boolean {
     for (const mixedKey of Object.keys(mixedObject)) {
-       if(mixedObject[mixedKey])return true
+        if (mixedObject[mixedKey]) return true;
     }
 
     return false;

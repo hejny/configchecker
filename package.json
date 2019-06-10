@@ -15,10 +15,10 @@
   },
   "author": "Pavol Hejný",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "onchange": "^3.3.0",
-    "prettier": "github:prettier/prettier"
+    "prettier": "github:prettier/prettier",
+    "typescript": "^3.5.1"
   }
 }

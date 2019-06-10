@@ -1,4 +1,4 @@
-import { ConfigChecker } from "../classes/ConfigChecker";
+import { ConfigChecker } from '../classes/ConfigChecker';
 
 export interface IConfigValueProfile {
     key: string;

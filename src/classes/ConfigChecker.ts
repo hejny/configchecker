@@ -1,9 +1,8 @@
-import { IConfigSource } from "../interfaces/IConfigSource";
-import { ConfigValueString } from "./ConfigValueString";
+import { IConfigSource } from '../interfaces/IConfigSource';
+import { ConfigValueString } from './ConfigValueString';
 
 export class ConfigChecker {
-
-    static from(source: IConfigSource):ConfigChecker{
+    static from(source: IConfigSource): ConfigChecker {
         const config = new ConfigChecker();
         config.load(source);
         return config;
@@ -19,11 +18,9 @@ export class ConfigChecker {
     }
 
     get(key: string, description?: string): ConfigValueString {
-        return new ConfigValueString(this.source[key], {key, description, configChecker: this});
+        return new ConfigValueString(this.source[key], { key, description, configChecker: this });
     }
 
     //TODO: Check multiple usages of config values
     //TODO: custom metods to parse values
 }
-
-
