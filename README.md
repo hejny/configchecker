@@ -17,7 +17,7 @@ __TODO:__
 
 # Authors
 
-- [Pavol Hejný](https://www.pavolhejny.com/)
+- [Pavol Hejný](https://github.com/hejny)
 - [David Pohan](https://davidpohan.cz/)
 
 
