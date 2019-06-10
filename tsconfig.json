@@ -2,7 +2,6 @@
   "compilerOptions": {
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
     "lib": ["dom", "es2017"],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
