@@ -2,6 +2,14 @@
 
 Awesome checker of config - fully support typescript, fluent API,...
 
+# Install
+
+Install from [NPM](https://www.npmjs.com/package/configchecker)
+
+```bash
+npm i configchecker
+```
+
 # Usage
 
 __TODO:__
@@ -9,8 +17,8 @@ __TODO:__
 
 # Authors
 
-[Pavol Hejný](https://www.pavolhejny.com/)
-[David Pohan](https://davidpohan.cz/)
+- [Pavol Hejný](https://www.pavolhejny.com/)
+- [David Pohan](https://davidpohan.cz/)
 
 
 # Thanks
