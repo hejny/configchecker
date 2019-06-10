@@ -18,7 +18,7 @@ __TODO:__
 # Authors
 
 - [Pavol Hejný](https://github.com/hejny)
-- [David Pohan](https://davidpohan.cz/)
+- [David Pohan](https://github.com/pohy)
 
 
 # Development
