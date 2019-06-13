@@ -1,8 +1,8 @@
 /lib
 /coverage
 
+# IDEs
 .idea
-
 .vscode/*
 !.vscode/terminals.json
 
