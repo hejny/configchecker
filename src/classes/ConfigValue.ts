@@ -1,8 +1,8 @@
 import { IConfigValueProfile } from '../interfaces/IConfigValueProfile';
 
 // TODO: nice generic types
-export class ConfigValue<T> {
-    constructor(public value: T, protected profile: IConfigValueProfile, private canBeUndefined = true) {}
+export class ConfigValue<TValue> {
+    constructor(public value: TValue, protected profile: IConfigValueProfile, private canBeUndefined = true) {}
 
     get about() {
         return `
@@ -15,7 +15,7 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         `.trim();
     }
 
-    public required(): ConfigValue<NonNullable<T>> {
+    public required(): ConfigValue<NonNullable<TValue>> {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         if (typeof this.value === 'undefined') {
             throw Error(`In config should be defined ${this.profile.key}. \n ${this.about}`);
@@ -23,18 +23,19 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         return new ConfigValue(this.value!, this.profile, false);
     }
 
-    public default(value: NonNullable<T>): ConfigValue<NonNullable<T>> {
+    public default(value: NonNullable<TValue>): ConfigValue<TValue>/*TODO: Return type should be ConfigValue<NonNullable<T>> but Typescript is not working with that... */ {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
+        // TODO: ... it is saying on next line: "Type 'ConfigValue<T>' is not assignable to type 'ConfigValue<NonNullable<T>>'. Type 'T' is not assignable to type 'NonNullable<T>':
         return new ConfigValue(this.value || value, this.profile, false);
     }
 
-    public custom<TC>(conversionType: string, convert: (value: NonNullable<T>) => TC): ConfigValue<TC | undefined> {
+    public custom<TvalueCustom>(conversionType: string, convert: (value: NonNullable<TValue>) => TvalueCustom): ConfigValue<TvalueCustom | undefined> {
         if (typeof this.value === 'undefined') {
             return new ConfigValue(undefined, this.profile);
         }
 
         try {
-            return new ConfigValue<TC>(convert(this.value! /*TODO: why !*/), this.profile);
+            return new ConfigValue<TvalueCustom>(convert(this.value! /*TODO: why !*/), this.profile);
         } catch (error) {
             throw new Error(
                 `In config thare is a problem with converting "${this.value}" to ${conversionType}. ${error.message} \n ${this.about}`,
@@ -42,10 +43,17 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
         }
     }
 
+    get object(){
+        const object:any = {};
+        object[this.profile.key] = this.value;
+        // TODO: Here is not used the full potencial of the typescript
+        return object as {[k: string]: TValue};
+    }
+
     /* tslint:disable */
     // TODO: Strange ts-lint warning Shadowed name: 'T'
-    public asType<T>(): ConfigValue<T> {
-        return new ConfigValue((this.value as unknown) as T, this.profile);
+    public asType<TvalueCustom>(): ConfigValue<TvalueCustom> {
+        return new ConfigValue((this.value as unknown) as TvalueCustom, this.profile);
     }
     /* tslint:enable */
 
