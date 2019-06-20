@@ -1,6 +1,6 @@
 {
   "name": "configchecker",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Awesome checker of config - fully support typescript, fluent API,...",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
