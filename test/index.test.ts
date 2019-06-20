@@ -23,7 +23,6 @@ test('ConfigChecker', () => {
     expect(() => config.get('BOOLEAN').boolean().value).not.toThrowError();
     expect(() => config.get('BOOLEAN_INVALID').boolean().value).toThrowError();
 
-
     expect(() => config.get('STRING').object.STRING).not.toThrowError();
 
     /*
@@ -32,7 +31,6 @@ test('ConfigChecker', () => {
         ...config.get('MESSENGER_APP_SECRET').required().object,
     };
     */
-
 });
 
 // TODO:  In config thare is a problem with converting "https://find-toilet.herokuapp.com/" to url. Value is not valid URL.

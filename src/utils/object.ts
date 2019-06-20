@@ -9,11 +9,14 @@ export function decapitalize<T>(mixedObject: { [key: string]: T }): { [key: stri
     return decapitalizedObject;
 }
 
-export function emptyKeysAsUndefined<T>(mixedObject: { [key: string]: T }): { [key: string]: T } {
+export function emptyKeysAsUndefined<T>(
+    mixedObject: { [key: string]: T },
+    valueIsNotEmpty: (value: T) => boolean = (value: T) => !!value,
+): { [key: string]: T } {
     const purgedObject: { [key: string]: T } = {};
 
     for (const mixedKey of Object.keys(mixedObject)) {
-        if (mixedObject[mixedKey]) {
+        if (valueIsNotEmpty(mixedObject[mixedKey])) {
             purgedObject[mixedKey] = mixedObject[mixedKey];
         }
     }
