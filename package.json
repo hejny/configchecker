@@ -15,7 +15,8 @@
     "lint": "tslint -p tsconfig.json",
     "prepublish": "npm test && npm run lint && npm run build",
     "preversion": "npm run lint",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "documentation": "typedoc --excludePrivate --hideGenerator --mode file --theme minimal --out docs --name \"Config checker\" ./src"
   },
   "repository": {
     "type": "git",
