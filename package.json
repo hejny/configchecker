@@ -9,7 +9,7 @@
     "build": "tsc",
     "build-watch": "tsc --watch",
     "prettier": "prettier --config .prettierrc --write \"{src,test,.vscode}/**/*.{ts,json}\"",
-    "prettier-watch": "onchange --initial \"**/*\" -- npm run prettier",
+    "prettier-watch": "onchange \"{src,test,.vscode}/**/*.{ts,json}\" -- prettier --config .prettierrc --write {{changed}}",
     "test": "jest --config jestconfig.json",
     "test-watch": "jest --config jestconfig.json --watchAll",
     "lint": "tslint -p tsconfig.json",
