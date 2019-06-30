@@ -12,6 +12,8 @@ npm i configchecker
 
 # Story
 
+![](https://media.giphy.com/media/ptmLwmjuFw2yI/giphy.gif)
+
 When you use some ENV value do you really know what it contains or if it is really defined?
 
 ```typescript
