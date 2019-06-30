@@ -13,10 +13,10 @@
     "test": "jest --config jestconfig.json",
     "test-watch": "jest --config jestconfig.json --watchAll",
     "lint": "tslint -p tsconfig.json",
-    "prepublish": "npm test && npm run lint && npm run build",
+    "prepublish": "npm test && npm run lint && npm run build && npm run ducumentation && git push",
     "preversion": "npm run lint",
     "postversion": "git push && git push --tags",
-    "documentation": "typedoc --excludePrivate --hideGenerator --mode file --theme minimal --out docs --name \"Config checker\" ./src"
+    "documentation": "git diff --exit-code && typedoc --excludePrivate --hideGenerator --mode file --theme minimal --out docs --name \"Config checker\" ./src && git commit -m \"Documentation\""
   },
   "repository": {
     "type": "git",
