@@ -1,6 +1,6 @@
 # Config Checker
 
-A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full ==[documentation](https://hejny.github.io/configchecker/)==.
+A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full **[documentation](https://hejny.github.io/configchecker/)**.
 
 # Install
 
