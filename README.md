@@ -12,15 +12,13 @@ npm i configchecker
 
 # Story
 
-![](https://media.giphy.com/media/ptmLwmjuFw2yI/giphy.gif)
-
 When you use some ENV value do you really know what it contains or if it is really defined?
 
 ```typescript
 export const { TESTING_MAIL } = process.env;
 ```
 
-This will be OK until your server tryis to send some email. Maybe it drop whole server or just dont do nothing and you will be figuring out why the hell server is working but it dont send any emails.
+This will be OK until your server tries to send some email. Maybe it drops the whole server or just don't do nothing and you will be figuring out why the hell server is working but it doesn't send any emails.
 
 I have this problem many many times.
 
@@ -74,7 +72,7 @@ export const TESTING_MAIL = config.get('TESTING_MAIL').value;
 
 ## Full sample 2
 
-This sample is working same as sample 1 but unfortunatelly it is not using full TypeScript potencial.
+This sample is working same like sample 1 but unfortunately it is not using full TypeScript potential.
 
 ```typescript
 import { ConfigChecker } from '../src/classes/ConfigChecker';
@@ -89,7 +87,7 @@ export default {
 
 # Contributing
 
-I am opened to your pull requests, feedback, suggestions and donations :) . Contact to me are on my [personal page](https://www.pavolhejny.com)
+I am opened to your pull requests, feedback, suggestions and donations :) . Contact to me is on my [personal page](https://www.pavolhejny.com)
 
 
 
