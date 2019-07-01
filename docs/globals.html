@@ -944,10 +944,9 @@ img { max-width: 100%; }
 			<p>Install from <a href="https://www.npmjs.com/package/configchecker">NPM</a></p>
 			<pre><code class="language-bash">npm i configchecker</code></pre>
 			<h1 id="story">Story</h1>
-			<p><img src="https://media.giphy.com/media/ptmLwmjuFw2yI/giphy.gif" alt=""></p>
 			<p>When you use some ENV value do you really know what it contains or if it is really defined?</p>
 			<pre><code class="language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> { TESTING_MAIL } = process.env;</code></pre>
-			<p>This will be OK until your server tryis to send some email. Maybe it drop whole server or just dont do nothing and you will be figuring out why the hell server is working but it dont send any emails.</p>
+			<p>This will be OK until your server tries to send some email. Maybe it drops the whole server or just don&#39;t do nothing and you will be figuring out why the hell server is working but it doesn&#39;t send any emails.</p>
 			<p>I have this problem many many times.</p>
 			<p>And because I am a TypeScript lover it is fully using all advantages of static typing.</p>
 			<h1 id="usage">Usage</h1>
@@ -973,7 +972,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> PORT = config.get(<span class="hljs-string">'PORT'</span>).number().required().value;
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TESTING_MAIL = config.get(<span class="hljs-string">'TESTING_MAIL'</span>).value;</code></pre>
 			<h2 id="full-sample-2">Full sample 2</h2>
-			<p>This sample is working same as sample 1 but unfortunatelly it is not using full TypeScript potencial.</p>
+			<p>This sample is working same like sample 1 but unfortunately it is not using full TypeScript potential.</p>
 			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/classes/ConfigChecker'</span>;
 <span class="hljs-keyword">const</span> config = ConfigChecker.from(process.env);
 
@@ -982,7 +981,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
     ...config.get(<span class="hljs-string">'TESTING_MAIL'</span>).object
 }</code></pre>
 			<h1 id="contributing">Contributing</h1>
-			<p>I am opened to your pull requests, feedback, suggestions and donations :) . Contact to me are on my <a href="https://www.pavolhejny.com">personal page</a></p>
+			<p>I am opened to your pull requests, feedback, suggestions and donations :) . Contact to me is on my <a href="https://www.pavolhejny.com">personal page</a></p>
 			<h1 id="authors">Authors</h1>
 			<ul>
 				<li><a href="https://github.com/hejny">Pavol Hejný</a></li>
@@ -1033,7 +1032,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/b00da63/src/utils/object.ts#L1">utils/object.ts:1</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/a8da380/src/utils/object.ts#L1">utils/object.ts:1</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1072,7 +1071,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/b00da63/src/utils/object.ts#L12">utils/object.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/a8da380/src/utils/object.ts#L12">utils/object.ts:12</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1132,7 +1131,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/b00da63/src/utils/object.ts#L28">utils/object.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/a8da380/src/utils/object.ts#L28">utils/object.ts:28</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
