@@ -951,7 +951,7 @@ img { max-width: 100%; }
 			<p>And because I am a TypeScript lover it is fully using all advantages of static typing.</p>
 			<h1 id="usage">Usage</h1>
 			<p>I load the config from some environment Object:</p>
-			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/classes/ConfigChecker'</span>;
+			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'configchecker'</span>;
 
 <span class="hljs-keyword">const</span> config = ConfigChecker.from(process.env);</code></pre>
 			<p>And then I can read variabiles from it:</p>
@@ -966,14 +966,14 @@ config.get(<span class="hljs-string">'...'</span>).list().value;
 config.get(<span class="hljs-string">'...'</span>).date().value;
 config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 			<h2 id="full-sample-1">Full sample 1</h2>
-			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/classes/ConfigChecker'</span>;
+			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'configchecker'</span>;
 <span class="hljs-keyword">const</span> config = ConfigChecker.from(process.env);
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> PORT = config.get(<span class="hljs-string">'PORT'</span>).number().required().value;
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TESTING_MAIL = config.get(<span class="hljs-string">'TESTING_MAIL'</span>).value;</code></pre>
 			<h2 id="full-sample-2">Full sample 2</h2>
 			<p>This sample is working same like sample 1 but unfortunately it is not using full TypeScript potential.</p>
-			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/classes/ConfigChecker'</span>;
+			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { ConfigChecker } <span class="hljs-keyword">from</span> <span class="hljs-string">'configchecker'</span>;
 <span class="hljs-keyword">const</span> config = ConfigChecker.from(process.env);
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -1032,7 +1032,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/d7c1fbf/src/utils/object.ts#L1">utils/object.ts:1</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/36d0b7d/src/utils/object.ts#L1">utils/object.ts:1</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1071,7 +1071,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/d7c1fbf/src/utils/object.ts#L12">utils/object.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/36d0b7d/src/utils/object.ts#L12">utils/object.ts:12</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1131,7 +1131,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/d7c1fbf/src/utils/object.ts#L28">utils/object.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/36d0b7d/src/utils/object.ts#L28">utils/object.ts:28</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>

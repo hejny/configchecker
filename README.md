@@ -30,7 +30,7 @@ And because I am a TypeScript lover it is fully using all advantages of static t
 I load the config from some environment Object:
 
 ```typescript
-import { ConfigChecker } from '../src/classes/ConfigChecker';
+import { ConfigChecker } from 'configchecker';
 
 const config = ConfigChecker.from(process.env);
 ```
@@ -63,7 +63,7 @@ config.get('...').url().value;
 ## Full sample 1
 
 ```typescript
-import { ConfigChecker } from '../src/classes/ConfigChecker';
+import { ConfigChecker } from 'configchecker';
 const config = ConfigChecker.from(process.env);
 
 export const PORT = config.get('PORT').number().required().value;
@@ -75,7 +75,7 @@ export const TESTING_MAIL = config.get('TESTING_MAIL').value;
 This sample is working same like sample 1 but unfortunately it is not using full TypeScript potential.
 
 ```typescript
-import { ConfigChecker } from '../src/classes/ConfigChecker';
+import { ConfigChecker } from 'configchecker';
 const config = ConfigChecker.from(process.env);
 
 export default {
