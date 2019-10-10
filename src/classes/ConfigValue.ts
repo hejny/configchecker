@@ -8,11 +8,7 @@ export class ConfigValue<TValue> {
         return `
 **Key:** "${this.profile.key}"
 **Description:** "${this.profile.description}"
-**Config:**
-\`\`\`json
-${JSON.stringify(this.profile.configChecker.source, null, 4)}
-\`\`\`
-        `.trim();
+`.trim();
     }
 
     public required(): ConfigValue<NonNullable<TValue>> {
