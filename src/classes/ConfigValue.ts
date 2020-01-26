@@ -4,11 +4,15 @@ import { IConfigValueProfile } from '../interfaces/IConfigValueProfile';
 export class ConfigValue<TValue> {
     constructor(public value: TValue, protected profile: IConfigValueProfile, private canBeUndefined = true) {}
 
-    get about() {
-        return `
-**Key:** "${this.profile.key}"
-**Description:** "${this.profile.description}"
-`.trim();
+    private get about():string {
+
+        let about = this.profile.key;
+
+        if(this.profile.description){
+            this.profile.description += `(${this.profile.description.trim()}")`;
+        }
+
+        return about;
     }
 
     public required(): ConfigValue<NonNullable<TValue>> {
@@ -55,7 +59,13 @@ export class ConfigValue<TValue> {
 
     /* tslint:disable */
     // TODO: Strange ts-lint warning Shadowed name: 'T'
-    public asType<TvalueCustom>(): ConfigValue<TvalueCustom> {
+    public asType<TvalueCustom>(typeChecker?:(value:TValue)=>boolean): ConfigValue<TvalueCustom> {
+
+        if(typeChecker){
+            if(!typeChecker(this.value)){
+                throw new Error(`Value is not in expected format - rejected by type checker function. ${this.about}`);
+            }
+        }
         return new ConfigValue((this.value as unknown) as TvalueCustom, this.profile);
     }
     /* tslint:enable */
