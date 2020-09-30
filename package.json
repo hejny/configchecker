@@ -1,6 +1,6 @@
 {
   "name": "configchecker",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Awesome checker of config - fully support typescript, fluent API,...",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,7 +16,7 @@
     "lint": "tslint -p tsconfig.json",
     "prepublish": "npm test && npm run lint && npm run build && npm run documentation && git push",
     "preversion": "npm run lint",
-    "postversion": "git push && git push --tags && npm publish"    
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
