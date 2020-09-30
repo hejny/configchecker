@@ -6,7 +6,7 @@ export class ConfigValue<TValue> {
 
     private get about():string {
 
-        let about = this.profile.key;
+        const about = this.profile.key;
 
         if(this.profile.description){
             this.profile.description += `(${this.profile.description.trim()}")`;
