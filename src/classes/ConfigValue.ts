@@ -26,18 +26,18 @@ ${JSON.stringify(this.profile.configChecker.source, null, 4)}
     public default(
         value: NonNullable<TValue>,
     ): ConfigValue<
-        TValue
+    NonNullable<TValue>
     > /*TODO: Return type should be ConfigValue<NonNullable<T>> but Typescript is not working with that... */ {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         // TODO: ... it is saying on next line: "Type 'ConfigValue<T>' is not assignable to type 'ConfigValue<NonNullable<T>>'. Type 'T' is not assignable to type 'NonNullable<T>':
-        return new ConfigValue(this.value || value, this.profile, false);
+        return new ConfigValue(this.value as NonNullable<TValue> || value, this.profile, false);
     }
 
     public custom<TvalueCustom>(
         conversionType: string,
         convert: (value: NonNullable<TValue>) => TvalueCustom,
     ): ConfigValue<TvalueCustom | undefined> {
-        if (typeof this.value === 'undefined') {
+        if (typeof this.value === 'undefined' || this.value as unknown as string === '') {
             return new ConfigValue(undefined, this.profile);
         }
 
