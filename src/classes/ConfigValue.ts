@@ -17,20 +17,29 @@ export class ConfigValue<TValue> {
 
     public required(): ConfigValue<NonNullable<TValue>> {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
-        if (typeof this.value === 'undefined') {
+        if (this.value === undefined) {
             throw Error(`In config should be defined ${this.profile.key}. \n ${this.about}`);
         }
         return new ConfigValue(this.value!, this.profile, false);
     }
 
     public default(
-        value: NonNullable<TValue>,
+        defaultValue: NonNullable<TValue>,
     ): ConfigValue<
     NonNullable<TValue>
     > /*TODO: Return type should be ConfigValue<NonNullable<T>> but Typescript is not working with that... */ {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         // TODO: ... it is saying on next line: "Type 'ConfigValue<T>' is not assignable to type 'ConfigValue<NonNullable<T>>'. Type 'T' is not assignable to type 'NonNullable<T>':
-        return new ConfigValue(this.value as NonNullable<TValue> || value, this.profile, false);
+       
+        let value: NonNullable<TValue>;
+
+        if(this.value!==undefined){
+            value = this.value as NonNullable<TValue>;
+        }else{
+            value = defaultValue;
+        }
+       
+        return new ConfigValue(value, this.profile, false);
     }
 
     public custom<TvalueCustom>(
