@@ -928,6 +928,9 @@ img { max-width: 100%; }
 			<a href="globals.html#objectdecapitalize" class="tsd-kind-icon">object<wbr>Decapitalize</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="globals.html#objectdeflatten" class="tsd-kind-icon">object<wbr>Deflatten</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="globals.html#objectemptykeysasundefined" class="tsd-kind-icon">object<wbr>Empty<wbr>Keys<wbr>AsUndefined</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
@@ -1013,6 +1016,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#objectdecapitalize" class="tsd-kind-icon">object<wbr>Decapitalize</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#objectdeflatten" class="tsd-kind-icon">object<wbr>Deflatten</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#objectemptykeysasundefined" class="tsd-kind-icon">object<wbr>Empty<wbr>Keys<wbr>AsUndefined</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#objectisnotempty" class="tsd-kind-icon">object<wbr>IsNot<wbr>Empty</a></li>
 						</ul>
@@ -1032,7 +1036,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/9b0a209/src/utils/object.ts#L1">utils/object.ts:1</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/5feb251/src/utils/objectDecapitalize.ts#L1">utils/objectDecapitalize.ts:1</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1062,6 +1066,35 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="objectdeflatten" class="tsd-anchor"></a>
+				<h3>object<wbr>Deflatten</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">object<wbr>Deflatten&lt;T&gt;<span class="tsd-signature-symbol">(</span>flatObject<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/5feb251/src/utils/objectDeflatten.ts#L1">utils/objectDeflatten.ts:1</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>T</h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>flatObject: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 				<a name="objectemptykeysasundefined" class="tsd-anchor"></a>
 				<h3>object<wbr>Empty<wbr>Keys<wbr>AsUndefined</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
@@ -1071,7 +1104,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/9b0a209/src/utils/object.ts#L12">utils/object.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/5feb251/src/utils/objectEmptyKeysAsUndefined.ts#L1">utils/objectEmptyKeysAsUndefined.ts:1</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1131,7 +1164,7 @@ config.get(<span class="hljs-string">'...'</span>).url().value;</code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/9b0a209/src/utils/object.ts#L28">utils/object.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/hejny/configchecker/blob/5feb251/src/utils/objectIsNotEmpty.ts#L2">utils/objectIsNotEmpty.ts:2</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
