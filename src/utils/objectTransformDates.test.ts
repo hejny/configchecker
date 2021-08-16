@@ -1,5 +1,6 @@
 import { objectTransformDates } from './objectTransformDates';
 
+// tslint:disable:object-literal-sort-keys
 describe('how transforming dates in object', () => {
     it('transforms dates', () => {
         expect(objectTransformDates({ start: '2021-08-16', end: '2021-09-16' })).toEqual({
