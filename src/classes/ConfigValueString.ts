@@ -47,6 +47,9 @@ export class ConfigValueString extends ConfigValue<string | undefined> {
         });
     }
 
+
+    // TODO: Arrays and sets
+
     public date(): ConfigValue<Date | undefined> {
         return this.custom('date', (stringValue) => {
             const dateValue = new Date(stringValue);
