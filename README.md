@@ -1,4 +1,4 @@
-# Config Checker
+# ☑️ Config Checker
 
 A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full **[documentation](https://hejny.github.io/configchecker/)**.
 
@@ -26,7 +26,6 @@ And because I am a TypeScript lover it is fully using all advantages of static t
 
 # Usage
 
-
 I load the config from some environment Object:
 
 ```typescript
@@ -41,13 +40,11 @@ And then I can read variabiles from it:
 config.get('TESTING_MAIL').value;
 ```
 
-
 I can enforce them:
 
 ```typescript
 config.get('TESTING_MAIL').required().value;
 ```
-
 
 I can convert them to certain types:
 
@@ -66,7 +63,10 @@ config.get('...').url().value;
 import { ConfigChecker } from 'configchecker';
 const config = ConfigChecker.from(process.env);
 
-export const PORT = config.get('PORT').number().required().value;
+export const PORT = config
+    .get('PORT')
+    .number()
+    .required().value;
 export const TESTING_MAIL = config.get('TESTING_MAIL').value;
 ```
 
@@ -79,25 +79,25 @@ import { ConfigChecker } from 'configchecker';
 const config = ConfigChecker.from(process.env);
 
 export default {
-    ...config.get('PORT').number().required().object,
-    ...config.get('TESTING_MAIL').object
-}
+    ...config
+        .get('PORT')
+        .number()
+        .required().object,
+    ...config.get('TESTING_MAIL').object,
+};
 ```
+
+<!--
+TODO: To all projects:
++ donation address
 
 
 # Contributing
 
-I am opened to your pull requests, feedback, suggestions and donations :) . Contact to me is on my [personal page](https://www.pavolhejny.com)
-
-
-
+I am open to your pull requests, feedback, suggestions, and donations. Contact to me is on my [personal page](https://www.pavolhejny.com)
+-->
 
 # Authors
 
-- [Pavol Hejný](https://github.com/hejny)
-- [David Pohan](https://github.com/pohy)
-
-
-# Thanks
-
-To boilerplate was used [my-awesome-greeter](https://github.com/caki0915/my-awesome-greeter).
+-   [Pavol Hejný](https://github.com/hejny)
+-   [David Pohan](https://github.com/pohy)

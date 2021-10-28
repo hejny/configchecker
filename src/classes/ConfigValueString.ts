@@ -1,5 +1,8 @@
 import { ConfigValue } from './ConfigValue';
 
+/**
+ * ConfigValueString represent one unprocessed config value which can be by this class and its methods futher processed.
+ */
 export class ConfigValueString extends ConfigValue<string | undefined> {
     public number(): ConfigValue<number | undefined> {
         return this.custom('number', (stringValue) => {

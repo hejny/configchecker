@@ -1,7 +1,7 @@
-import { ConfigChecker } from '../classes/ConfigChecker';
+import { IConfigChecker } from "./IConfigChecker";
 
 export interface IConfigValueProfile {
     key: string;
-    configChecker: ConfigChecker;
+    configChecker: IConfigChecker;
     description?: string;
 }

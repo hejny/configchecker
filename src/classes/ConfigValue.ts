@@ -1,14 +1,15 @@
 import { IConfigValueProfile } from '../interfaces/IConfigValueProfile';
 
-// TODO: nice generic types
+/**
+ * ConfigValue represents processed config value in type TValue
+ */
 export class ConfigValue<TValue> {
     constructor(public value: TValue, protected profile: IConfigValueProfile, private canBeUndefined = true) {}
 
-    private get about():string {
-
+    private get about(): string {
         const about = this.profile.key;
 
-        if(this.profile.description){
+        if (this.profile.description) {
             this.profile.description += `(${this.profile.description.trim()}")`;
         }
 
@@ -26,19 +27,19 @@ export class ConfigValue<TValue> {
     public default(
         defaultValue: NonNullable<TValue>,
     ): ConfigValue<
-    NonNullable<TValue>
+        NonNullable<TValue>
     > /*TODO: Return type should be ConfigValue<NonNullable<T>> but Typescript is not working with that... */ {
         this.checkThatValueCanBeUndefinedToPreventMultipleUsageOfRequiredOrDefault();
         // TODO: ... it is saying on next line: "Type 'ConfigValue<T>' is not assignable to type 'ConfigValue<NonNullable<T>>'. Type 'T' is not assignable to type 'NonNullable<T>':
-       
+
         let value: NonNullable<TValue>;
 
-        if(this.value!==undefined){
+        if (this.value !== undefined) {
             value = this.value as NonNullable<TValue>;
-        }else{
+        } else {
             value = defaultValue;
         }
-       
+
         return new ConfigValue(value, this.profile, false);
     }
 
@@ -46,7 +47,7 @@ export class ConfigValue<TValue> {
         conversionType: string,
         convert: (value: NonNullable<TValue>) => TvalueCustom,
     ): ConfigValue<TvalueCustom | undefined> {
-        if (typeof this.value === 'undefined' || this.value as unknown as string === '') {
+        if (typeof this.value === 'undefined' || ((this.value as unknown) as string) === '') {
             return new ConfigValue(undefined, this.profile);
         }
 
@@ -68,10 +69,9 @@ export class ConfigValue<TValue> {
 
     /* tslint:disable */
     // TODO: Strange ts-lint warning Shadowed name: 'T'
-    public asType<TvalueCustom>(typeChecker?:(value:TValue)=>boolean): ConfigValue<TvalueCustom> {
-
-        if(typeChecker){
-            if(!typeChecker(this.value)){
+    public asType<TvalueCustom>(typeChecker?: (value: TValue) => boolean): ConfigValue<TvalueCustom> {
+        if (typeChecker) {
+            if (!typeChecker(this.value)) {
                 throw new Error(`Value is not in expected format - rejected by type checker function. ${this.about}`);
             }
         }
