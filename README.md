@@ -14,7 +14,7 @@
 
 A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full **[documentation](https://hejny.github.io/configchecker/)**.
 
-# Install
+## Install
 
 Install from [NPM](https://www.npmjs.com/package/configchecker)
 
@@ -22,7 +22,7 @@ Install from [NPM](https://www.npmjs.com/package/configchecker)
 npm i configchecker
 ```
 
-# Story
+## 💡 Motivation
 
 When you use some ENV value do you really know what it contains or if it is really defined?
 
@@ -36,7 +36,7 @@ I have this problem many many times.
 
 And because I am a TypeScript lover it is fully using all advantages of static typing.
 
-# Usage
+## Usage
 
 I load the config from some environment Object:
 
@@ -69,7 +69,7 @@ config.get('...').date().value;
 config.get('...').url().value;
 ```
 
-## Full sample 1
+### Full sample 1
 
 ```typescript
 import { ConfigChecker } from 'configchecker';
@@ -82,7 +82,7 @@ export const PORT = config
 export const TESTING_MAIL = config.get('TESTING_MAIL').value;
 ```
 
-## Full sample 2
+### Full sample 2
 
 This sample is working same like sample 1 but unfortunately it is not using full TypeScript potential.
 
@@ -109,7 +109,7 @@ TODO: To all projects:
 I am open to your pull requests, feedback, suggestions, and donations. Contact to me is on my [personal page](https://www.pavolhejny.com)
 -->
 
-# Authors
+## Authors
 
 -   [Pavol Hejný](https://github.com/hejny)
 -   [David Pohan](https://github.com/pohy)
