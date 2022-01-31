@@ -26,14 +26,14 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "24.0.13",
-    "codecov": "3.5.0",
+    "codecov": "^3.8.2",
     "jest": "24.8.0",
     "onchange": "3.3.0",
     "prettier": "^2.5.1",
     "ts-jest": "24.0.2",
     "tslint": "5.17.0",
     "tslint-config-prettier": "1.18.0",
-    "typedoc": "0.14.2",
+    "typedoc": "^0.22.11",
     "typescript": "3.5.1"
   },
   "files": [
