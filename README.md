@@ -5,8 +5,6 @@
  [![Package Quality](https://packagequality.com/shield/configchecker.svg)](https://packagequality.com/#?package=configchecker)
  [![License](https://img.shields.io/github/license/hejny/configchecker.svg?style=flat)](https://raw.githubusercontent.com/hejny/configchecker/master/LICENSE)
  [![NPM Version](https://badge.fury.io/js/@hejny%2Fconfigchecker.svg)](https://www.npmjs.com/package/@hejny/configchecker)
- [![Test](https://github.com/hejny/configchecker/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/configchecker/actions/workflows/test.yml)
- [![Lint](https://github.com/hejny/configchecker/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/configchecker/actions/workflows/lint.yml)
  [![Known Vulnerabilities](https://snyk.io/test/github/hejny/configchecker/badge.svg)](https://snyk.io/test/github/hejny/configchecker)
  [![Issues](https://img.shields.io/github/issues/hejny/configchecker.svg?style=flat)](https://github.com/hejny/configchecker/issues)
 
