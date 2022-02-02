@@ -22,7 +22,7 @@
     "url": "git+ssh://git@github.com:hejny/configchecker.git"
   },
   "author": "Pavol Hejný",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "24.0.13",
