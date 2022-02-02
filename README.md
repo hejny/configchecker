@@ -2,8 +2,9 @@
 
 <!--Badges-->
 
- [![Package Quality](https://packagequality.com/shield/configchecker.svg)](https://packagequality.com/#?package=configchecker)
- [![License](https://img.shields.io/github/license/hejny/configchecker.svg?style=flat)](https://raw.githubusercontent.com/hejny/configchecker/master/LICENSE)
+ [![License of ☑️ Config Checker](https://img.shields.io/github/license/hejny/configchecker.svg?style=flat)](https://github.com/hejny/configchecker/blob/master/LICENSE)
+ [![NPM Version of ☑️ Config Checker](https://badge.fury.io/js/configchecker.svg)](https://www.npmjs.com/package/configchecker)
+ [![Quality of package ☑️ Config Checker](https://packagequality.com/shield/configchecker.svg)](https://packagequality.com/#?package=configchecker)
  [![Known Vulnerabilities](https://snyk.io/test/github/hejny/configchecker/badge.svg)](https://snyk.io/test/github/hejny/configchecker)
  [![Issues](https://img.shields.io/github/issues/hejny/configchecker.svg?style=flat)](https://github.com/hejny/configchecker/issues)
 
