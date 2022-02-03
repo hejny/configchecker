@@ -74,9 +74,9 @@ import { ConfigChecker } from 'configchecker';
 const config = ConfigChecker.from(process.env);
 
 export const PORT = config
-    .get('PORT')
-    .number()
-    .required().value;
+.get('PORT')
+.number()
+.required().value;
 export const TESTING_MAIL = config.get('TESTING_MAIL').value;
 ```
 
@@ -89,11 +89,11 @@ import { ConfigChecker } from 'configchecker';
 const config = ConfigChecker.from(process.env);
 
 export default {
-    ...config
-        .get('PORT')
-        .number()
-        .required().object,
-    ...config.get('TESTING_MAIL').object,
+...config
+.get('PORT')
+.number()
+.required().object,
+...config.get('TESTING_MAIL').object,
 };
 ```
 
@@ -111,3 +111,13 @@ I am open to your pull requests, feedback, suggestions, and donations. Contact t
 
 -   [Pavol Hejný](https://github.com/hejny)
 -   [David Pohan](https://github.com/pohy)
+
+
+
+<!--Contributing-->
+
+## 🖋️ Contributing
+
+I am open to pull requests, feedback, and suggestions. Or if you like this utility, you can [☕ buy me a coffee](https://www.buymeacoffee.com/hejny) or [donate via cryptocurrencies](https://github.com/hejny/hejny/blob/main/documents/crypto.md).
+
+<!--/Contributing-->
