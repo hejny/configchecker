@@ -1,7 +1,7 @@
 {
   "name": "configchecker",
   "version": "1.5.1",
-  "description": "Awesome checker of config - fully support typescript, fluent API,...",
+  "description": "A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full documentation.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
