@@ -1,5 +1,5 @@
 A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full documentation.
 --aspect 2:1  --quality 2 --stylize 1250 --version 3
---seed 8825111
+--seed 4963371
 
 Note: All lines bellow (including this) are ignored.
