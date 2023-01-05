@@ -2,3 +2,4 @@
 #       And every first line will be searched during the harvesting phase
 
 A very simple and effective way to check config, before it's used in runtime with nice fluent API. Here is the full documentation.
+--version 4
