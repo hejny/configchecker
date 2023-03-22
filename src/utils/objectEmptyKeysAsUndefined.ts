@@ -1,6 +1,6 @@
 export function objectEmptyKeysAsUndefined<T>(
     mixedObject: { [key: string]: T; },
-    valueIsNotEmpty: (value: T) => boolean = (value: T) => TODO: !!value
+    valueIsNotEmpty: (value: T) => boolean = (value: T) => !!value
 ): { [key: string]: T; } {
     const purgedObject: { [key: string]: T; } = {};
 
