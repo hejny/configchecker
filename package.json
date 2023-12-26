@@ -34,7 +34,7 @@
         "tslint": "5.17.0",
         "tslint-config-prettier": "1.18.0",
         "typedoc": "0.22.11",
-        "typescript": "3.5.1"
+        "typescript": "5.3.3"
     },
     "files": [
         "lib/**/*"
