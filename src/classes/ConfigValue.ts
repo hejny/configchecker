@@ -47,13 +47,17 @@ export class ConfigValue<TValue> {
         conversionType: string,
         convert: (value: NonNullable<TValue>) => TvalueCustom,
     ): ConfigValue<TvalueCustom | undefined> {
-        if (typeof this.value === 'undefined' || ((this.value as unknown) as string) === '') {
+        if (typeof this.value === 'undefined' || (this.value as unknown as string) === '') {
             return new ConfigValue(undefined, this.profile);
         }
 
         try {
             return new ConfigValue<TvalueCustom>(convert(this.value! /*TODO: why !*/), this.profile);
         } catch (error) {
+            if (!(error instanceof Error)) {
+                throw error;
+            }
+
             throw new Error(
                 `In config thare is a problem with converting "${this.value}" to ${conversionType}. ${error.message} \n ${this.about}`,
             );
@@ -75,7 +79,7 @@ export class ConfigValue<TValue> {
                 throw new Error(`Value is not in expected format - rejected by type checker function. ${this.about}`);
             }
         }
-        return new ConfigValue((this.value as unknown) as TvalueCustom, this.profile);
+        return new ConfigValue(this.value as unknown as TvalueCustom, this.profile);
     }
     /* tslint:enable */
 
