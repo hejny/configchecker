@@ -7,7 +7,6 @@
         "alwaysStrict": true,
         "lib": ["dom", "es2017"],
         "strict": true,
-        "ignoreDeprecations": true,
         "noUnusedParameters": true,
         "resolveJsonModule": true,
         "strictNullChecks": true,
@@ -15,7 +14,6 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
-        "suppressImplicitAnyIndexErrors": true,
         "experimentalDecorators": true,
         "noUnusedLocals": false
     },
