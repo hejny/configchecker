@@ -3,7 +3,7 @@ import { config } from './config';
 describe('undefineds', () => {
     it('can detect that value is undefined in multiple situations', () => {
         expect(config.get(undefined).value).toBe(undefined);
-        expect(config.get(null).value).toBe(undefined);
+        expect(config.get(null as any).value).toBe(undefined);
         expect(config.get('NaN').value).toBe(undefined);
         expect(config.get('-').value).toBe(undefined);
         expect(config.get('---').value).toBe(undefined);
