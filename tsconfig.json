@@ -1,23 +1,24 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "declaration": true,
-    "outDir": "./lib",
-    "alwaysStrict": true,
-    "lib": ["dom", "es2017"],
-    "strict": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "experimentalDecorators": true,
-    "noUnusedLocals": false
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "test"]
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "./lib",
+        "alwaysStrict": true,
+        "lib": ["dom", "es2017"],
+        "strict": true,
+        "ignoreDeprecations": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true,
+        "strictNullChecks": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "experimentalDecorators": true,
+        "noUnusedLocals": false
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "test"]
 }
