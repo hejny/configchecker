@@ -4,7 +4,25 @@ import { IConfigValueProfile } from '../interfaces/IConfigValueProfile';
  * ConfigValue represents processed config value in type TValue
  */
 export class ConfigValue<TValue> {
-    constructor(public value: TValue, protected profile: IConfigValueProfile, private canBeUndefined = true) {}
+    constructor(public value: TValue, protected profile: IConfigValueProfile, private canBeUndefined = true) {
+        if (this.value === null) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && /^NaN$/i.test(this.value)) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && /^null$/i.test(this.value)) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && /^undefined$/i.test(this.value)) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && /^none$/i.test(this.value)) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && /^nothing$/i.test(this.value)) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && /^\-+$/i.test(this.value)) {
+            this.value = undefined as unknown as TValue;
+        } else if (typeof this.value === 'string' && this.value.trim() === '') {
+            this.value = undefined as unknown as TValue;
+        }
+    }
 
     private get about(): string {
         const about = this.profile.key;

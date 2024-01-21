@@ -32,8 +32,7 @@ describe('basics', () => {
     it('can throw error when not numeric', () => {
         expect(() => config.get('foo').number().value).toThrowError();
         expect(() => config.get('t1').number().value).toThrowError();
-        expect(() => config.get('1t').number().value).toThrowError();
-        expect(() => config.get('-').number().value).toThrowError();
+        expect(() => config.get('-').number().required().value).toThrowError();
     });
 
     it('can parse booleans', () => {
@@ -55,10 +54,10 @@ describe('basics', () => {
     });
 
     it('can throw error when not boolean', () => {
-        expect(() => config.get('foo').number().value).toThrowError();
-        expect(() => config.get('12.4').number().value).toThrowError();
-        expect(() => config.get('t1').number().value).toThrowError();
-        expect(() => config.get('1t').number().value).toThrowError();
-        expect(() => config.get('-').number().value).toThrowError();
+        expect(() => config.get('foo').boolean().value).toThrowError();
+        expect(() => config.get('12.4').boolean().value).toThrowError();
+        expect(() => config.get('t1').boolean().value).toThrowError();
+        expect(() => config.get('1t').boolean().value).toThrowError();
+        expect(() => config.get('-').boolean().required().value).toThrowError();
     });
 });

@@ -6,7 +6,19 @@ import { ConfigValue } from './ConfigValue';
 export class ConfigValueString extends ConfigValue<string | undefined> {
     public number(): ConfigValue<number | undefined> {
         return this.custom('number', (stringValue) => {
+            if (/^\+?Infinity$/i.test(stringValue.trim())) {
+                return Infinity;
+            }
+
+            if (/^\-Infinity$/i.test(stringValue.trim())) {
+                return -Infinity;
+            }
+
             const numericValue = Number.parseFloat(stringValue);
+
+            if (numericValue === 0 || numericValue === -0) {
+                return 0;
+            }
 
             if (Number.isNaN(numericValue)) {
                 throw new Error(`Value is not numeric.`);
@@ -46,7 +58,6 @@ export class ConfigValueString extends ConfigValue<string | undefined> {
             return stringValue.split(',').map((value) => value.trim());
         });
     }
-
 
     // TODO: Arrays and sets
 
