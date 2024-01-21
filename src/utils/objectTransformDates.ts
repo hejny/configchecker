@@ -1,7 +1,12 @@
 export function objectTransformDates<T>(object: T): T {
-    const transformedObject: Partial<T> = {};
+    if (typeof object !== 'object') {
+        return object;
+    }
 
-    for (const [key, value] of Object.entries(object)) {
+    const objectAs = object as Record<string, any>;
+    const transformedObject: Record<string, any> = {};
+
+    for (const [key, value] of Object.entries(objectAs)) {
         if (typeof value === 'object') {
             transformedObject[key] = objectTransformDates(value);
         } else if (typeof value === 'string') {
