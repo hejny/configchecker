@@ -146,7 +146,7 @@ You can also ⭐ star the configchecker package, [follow me on GitHub](https://g
 </a>
 &nbsp;&nbsp;&nbsp;
 <a href="https://webgpt.cz/?partner=ph&utm_medium=referral&utm_source=github-readme&utm_campaign=partner-ph">
-  <img src="https://webgpt.cz/_next/static/media/webgpt.white.7e7069eb.png" alt="WebGPT logo" width="50"  />
+  <img src="https://webgpt.cz/_next/static/media/webgpt-blue.e2bf1fff.png" alt="WebGPT logo" width="50"  />
 </a>
 
 
