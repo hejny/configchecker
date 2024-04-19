@@ -8,6 +8,7 @@
 [![Quality of package ☑️ Config Checker](https://packagequality.com/shield/configchecker.svg)](https://packagequality.com/#?package=configchecker)
 [![Known Vulnerabilities](https://snyk.io/test/github/hejny/configchecker/badge.svg)](https://snyk.io/test/github/hejny/configchecker)
 [![Issues](https://img.shields.io/github/issues/hejny/configchecker.svg?style=flat)](https://github.com/hejny/configchecker/issues)
+[![Socket](https://socket.dev/api/badge/npm/package/configchecker)](https://socket.dev/npm/package/configchecker)
 <!--[![License of ☑️ Config Checker](https://img.shields.io/github/license/hejny/configchecker.svg?style=flat)](https://github.com/hejny/configchecker/blob/main/LICENSE)-->
 
 <!--/Badges-->
