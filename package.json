@@ -22,7 +22,7 @@
         "url": "https://github.com/hejny/configchecker"
     },
     "author": "Pavol Hejný",
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "Apache-2.0",
     "dependencies": {},
     "devDependencies": {
         "@types/jest": "24.0.13",
